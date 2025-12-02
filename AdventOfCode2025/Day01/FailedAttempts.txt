@@ -4,9 +4,11 @@ Part 2:
 
 6065 is too low
 
-6163 just wrong
+6163 just wrong (probably Closer)
 
-6264 just wrong
+6186 just wrong
+
+6264 just wrong (probably Closer)
 
 6273 just wrong
 

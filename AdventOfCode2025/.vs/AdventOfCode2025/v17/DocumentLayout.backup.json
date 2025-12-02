@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|c:\\files\\projects\\advent-of-code-2025\\adventofcode2025\\day02\\day2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|solutionrelative:day02\\day2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|c:\\files\\projects\\advent-of-code-2025\\adventofcode2025\\day01\\day1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|solutionrelative:day01\\day1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|c:\\files\\projects\\advent-of-code-2025\\adventofcode2025\\day02\\failedattempts.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|solutionrelative:day02\\failedattempts.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|c:\\files\\projects\\advent-of-code-2025\\adventofcode2025\\day01\\sampleinput.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|solutionrelative:day01\\sampleinput.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|c:\\files\\projects\\advent-of-code-2025\\adventofcode2025\\day02\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|solutionrelative:day02\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|c:\\files\\projects\\advent-of-code-2025\\adventofcode2025\\day01\\failedattempts.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|solutionrelative:day01\\failedattempts.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|c:\\files\\projects\\advent-of-code-2025\\adventofcode2025\\day02\\sampleinput.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|solutionrelative:day02\\sampleinput.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|c:\\files\\projects\\advent-of-code-2025\\adventofcode2025\\day01\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|solutionrelative:day01\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{700F613B-E04F-4335-A8AE-5DF719DEC77A}|AdventOfCode2025.csproj|c:\\files\\projects\\advent-of-code-2025\\adventofcode2025\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,8 +30,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T08:01:24.867Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -42,67 +56,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SampleInput.txt",
-              "DocumentMoniker": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day02\\SampleInput.txt",
-              "RelativeDocumentMoniker": "Day02\\SampleInput.txt",
-              "ToolTip": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day02\\SampleInput.txt",
-              "RelativeToolTip": "Day02\\SampleInput.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAApAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "FailedAttempts.txt",
+              "DocumentMoniker": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day01\\FailedAttempts.txt",
+              "RelativeDocumentMoniker": "Day01\\FailedAttempts.txt",
+              "ToolTip": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day01\\FailedAttempts.txt",
+              "RelativeToolTip": "Day01\\FailedAttempts.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-12-02T07:54:06.097Z",
+              "WhenOpened": "2025-12-02T12:15:33.335Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Input.txt",
-              "DocumentMoniker": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day02\\Input.txt",
-              "RelativeDocumentMoniker": "Day02\\Input.txt",
-              "ToolTip": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day02\\Input.txt",
-              "RelativeToolTip": "Day02\\Input.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAACbAQAAAAAAAA==",
+              "DocumentMoniker": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day01\\Input.txt",
+              "RelativeDocumentMoniker": "Day01\\Input.txt",
+              "ToolTip": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day01\\Input.txt",
+              "RelativeToolTip": "Day01\\Input.txt",
+              "ViewState": "AgIAAEcQAAAAAAAAAAAAAEsQAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-12-02T07:54:01.775Z",
+              "WhenOpened": "2025-12-02T12:30:07.899Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FailedAttempts.txt",
-              "DocumentMoniker": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day02\\FailedAttempts.txt",
-              "RelativeDocumentMoniker": "Day02\\FailedAttempts.txt",
-              "ToolTip": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day02\\FailedAttempts.txt",
-              "RelativeToolTip": "Day02\\FailedAttempts.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Title": "SampleInput.txt",
+              "DocumentMoniker": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day01\\SampleInput.txt",
+              "RelativeDocumentMoniker": "Day01\\SampleInput.txt",
+              "ToolTip": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day01\\SampleInput.txt",
+              "RelativeToolTip": "Day01\\SampleInput.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-12-02T07:53:24.354Z",
+              "WhenOpened": "2025-12-02T12:15:56.993Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Day2.cs",
-              "DocumentMoniker": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day02\\Day2.cs",
-              "RelativeDocumentMoniker": "Day02\\Day2.cs",
-              "ToolTip": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day02\\Day2.cs*",
-              "RelativeToolTip": "Day02\\Day2.cs*",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAiwJIAAABzAAAAAAAAAA==",
+              "Title": "Day1.cs",
+              "DocumentMoniker": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day01\\Day1.cs",
+              "RelativeDocumentMoniker": "Day01\\Day1.cs",
+              "ToolTip": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day01\\Day1.cs",
+              "RelativeToolTip": "Day01\\Day1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADgvyAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T07:52:48.519Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T08:01:24.867Z",
+              "WhenOpened": "2025-12-02T12:13:57.92Z",
               "EditorCaption": ""
             }
           ]

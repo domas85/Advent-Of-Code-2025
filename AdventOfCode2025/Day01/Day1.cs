@@ -8,12 +8,13 @@ namespace AOC
         public static string line = "";
 
         public static List<char> inputRotation = new List<char>();
-        public static List<int> inputDistance = new List<int>();
+        public static List<Int32> inputDistance = new List<Int32>();
 
         public static bool wasZero = false;
 
-        public static Int32 currentRotation = 50;
-        public static Int32 result = 0;
+        public static Int64 currentRotation = 50;
+        public static Int64 result = 0;
+        public static bool wasAdded = false;
 
         public static void Run()
         {
@@ -30,6 +31,7 @@ namespace AOC
 
             for (int i = 0; i < inputRotation.Count; i++)
             {
+                wasAdded = false;
                 if (currentRotation == 0)
                 {
                     wasZero = true;
@@ -41,6 +43,7 @@ namespace AOC
 
                 if (inputRotation[i] == 'R')
                 {
+                    wasAdded = true;
                     currentRotation += inputDistance[i];
                 }
                 if (inputRotation[i] == 'L')
@@ -48,36 +51,21 @@ namespace AOC
                     currentRotation -= inputDistance[i];
                 }
 
-                if(currentRotation == 100)
+                if (currentRotation == 100)
                 {
                     currentRotation = 0;
                 }
 
                 CountRotations();
 
-                //if (wasZero && currentRotation > 100 || wasZero && currentRotation < -100)
-                //{
-                //    wasZero = false;
-                //}
-
-                //if (currentRotation == 100)
-                //{
-                //    wasZero = true;
-                //    currentRotation = 0;
-                //}
-                //else
-                //{
-                //    ClampBackToLockAmountWithRotationCount();
-                //}
-
-                Console.WriteLine("\n Input: " + inputRotation[i] + inputDistance[i]);
-                Console.WriteLine("\n Current Rotation: " + currentRotation);
 
                 if (currentRotation == 0)
                 {
-                    wasZero = true;
                     result++;
                 }
+
+                Console.WriteLine("\n Input: " + inputRotation[i] + inputDistance[i]);
+                Console.WriteLine("\n Current Rotation: " + currentRotation);
                 Console.WriteLine("\n Current Result Value: " + result);
                 Console.WriteLine("\n");
             }
@@ -113,39 +101,6 @@ namespace AOC
             Console.WriteLine("\n " + result);
         }
 
-        public static void ClampBackToLockAmountWithRotationCount()
-        {
-            while (currentRotation < 0 || currentRotation > 99)
-            {
-                if (currentRotation == 100)
-                {
-                    currentRotation = 0;
-                }
-
-                if (currentRotation < 0)
-                {
-                    if (wasZero)
-                    {
-                        wasZero = false;
-                        result--;
-                    }
-                    result++;
-                    currentRotation = 100 + currentRotation;
-                }
-
-                if (currentRotation > 99)
-                {
-                    if (wasZero)
-                    {
-                        wasZero = false;
-                        result--;
-                    }
-                    result++;
-                    currentRotation = currentRotation - 100;
-                }
-            }
-        }
-
         public static void ClampBackToLockAmount()
         {
             while (currentRotation < 0 || currentRotation > 99)
@@ -169,17 +124,27 @@ namespace AOC
 
         public static void CountRotations()
         {
+            bool wasModified = false;
             if (currentRotation < -99 || currentRotation > 99)
             {
                 string tempString = currentRotation.ToString();
                 string rotationCount = tempString.Substring(0, tempString.Length - 2);
 
                 result += int.Abs(int.Parse(rotationCount));
-
                 currentRotation = currentRotation - (100 * int.Parse(rotationCount));
-                if (wasZero && currentRotation == 0)
+                wasModified = true;
+                if (currentRotation < 0)
                 {
-                    wasZero = false;
+                    if (wasZero)
+                    {
+                        wasZero = false;
+                        result--;
+                    }
+                    result++;
+                    currentRotation = 100 + currentRotation;
+                }
+                if (currentRotation == 0 && wasAdded)
+                {
                     result--;
                 }
             }
@@ -193,12 +158,16 @@ namespace AOC
                 }
                 result++;
                 currentRotation = 100 + currentRotation;
+                if (wasModified)
+                {
+                    result++;
+                }
             }
         }
 
         public static void ReadInput()
         {
-            StreamReader sr = new StreamReader("C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day01\\Input.txt");
+            StreamReader sr = new StreamReader("C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day01\\SampleInput.txt");
             while (line != null)
             {
                 line = sr.ReadLine();
