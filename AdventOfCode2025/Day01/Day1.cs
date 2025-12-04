@@ -167,7 +167,7 @@ namespace AOC
 
         public static void ReadInput()
         {
-            StreamReader sr = new StreamReader("C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\Day01\\SampleInput.txt");
+            StreamReader sr = new StreamReader(@"../../../Day01/Input.txt");
             while (line != null)
             {
                 line = sr.ReadLine();
