@@ -53,7 +53,7 @@ namespace AOC
                 }
             }
 
-            PritnInput();
+            PrintInput();
             Console.WriteLine("\nResult: " + Result);
         }
 
@@ -69,7 +69,7 @@ namespace AOC
                     }
                 }
             }
-            PritnInput();
+            PrintInput();
             Console.WriteLine("\nResult: " + Result);
         }
 
@@ -146,7 +146,7 @@ namespace AOC
             }
         }
 
-        public static void PritnInput()
+        public static void PrintInput()
         {
             for (int y = 0; y < Input.GetLength(1); y++)
             {
