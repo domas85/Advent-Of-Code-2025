@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Security;
+using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace AOC
@@ -16,19 +17,44 @@ namespace AOC
 
         public static List<List<int>> Circuits = new List<List<int>>();
 
-        public static Int64 Result = 1;
+        public static long Result = 1;
 
         public static void Run()
         {
             Console.Write("Starting... \n");
             ReadInput();
-            SolvePart1();
-            //SolvePart2();
+            //SolvePart1();
+            SolvePart2();
         }
 
         public static void SolvePart2()
         {
+            Dictionary<Tuple<int, int>, Int64> DistancesForAllPairs = GetClosestPositionIndexes();
+            var sortedDict = from entry in DistancesForAllPairs orderby entry.Value ascending select entry;
 
+            KeyValuePair<Tuple<int, int>, Int64> element = new KeyValuePair<Tuple<int, int>, Int64>();
+
+            for (int i = 0; sortedDict.Count() > i; i++)
+            {
+                element = sortedDict.ElementAt(i);
+            
+                AddClosestBoxesToCircuit(element.Key);
+            
+                if(Circuits.Count() == 1 && Circuits[0].Count == Input.Count())
+                {
+                    break;
+                }
+            }
+
+            int Pos1_X = (int)Input[element.Key.Item1].X;
+            int Pos2_X = (int)Input[element.Key.Item2].X;
+
+            Console.WriteLine("\nJunction box 1 X: " + Pos1_X);
+            Console.WriteLine("\nJunction box 2 X: " + Pos2_X);
+
+            Result = Pos1_X * Pos2_X;
+
+            Console.WriteLine("\nResult: " + Result);
         }
 
         public static void SolvePart1()
