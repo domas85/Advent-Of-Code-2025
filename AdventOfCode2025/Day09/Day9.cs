@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Numerics;
-using System.Runtime.CompilerServices;
-using System.Security;
-using System.Xml.Linq;
-using static System.Net.Mime.MediaTypeNames;
+﻿using System.Numerics;
 
 namespace AOC
 {
@@ -39,17 +31,15 @@ namespace AOC
             {
                 for (int j = i + 1; j < Input.Count; j++)
                 {
-                    if (CheckWithinShape(Input[i], Input[j]))
+                    if (IsRectangleWithinBorder_AxisAligned(Input[i], Input[j], AllPerpendicularBorderEdges))
                     {
+                        var area = GetAreaBetweenTwoPoints(Input[i], Input[j]);
 
-                    }
-
-                    var area = GetAreaBetweenTwoPoints(Input[i], Input[j]);
-
-                    if (area > BiggestArea)
-                    {
-                        BiggestArea = area;
-                        BiggestSquere = new Tuple<Vector2, Vector2>(Input[i], Input[j]);
+                        if (area > BiggestArea)
+                        {
+                            BiggestArea = area;
+                            BiggestSquere = new Tuple<Vector2, Vector2>(Input[i], Input[j]);
+                        }
                     }
                 }
             }
@@ -78,22 +68,132 @@ namespace AOC
             Console.WriteLine("\nResult: " + Result);
         }
 
-        public static bool CheckWithinShape(Vector2 pos1, Vector2 pos2)
+        public static bool IsRectangleWithinBorder_AxisAligned(Vector2 pos1, Vector2 pos2, List<Tuple<Vector2, Vector2>> borderEdges)
         {
             if (pos1.X == pos2.X || pos1.Y == pos2.Y)
             {
                 return true;
             }
-            List<Tuple<Vector2, Vector2>> edges = new List<Tuple<Vector2, Vector2>>();
 
-            edges.Add(new Tuple<Vector2, Vector2>(new Vector2(pos1.X, pos1.Y), new Vector2(pos1.X, pos2.Y)));
-            edges.Add(new Tuple<Vector2, Vector2>(new Vector2(pos1.X, pos1.Y), new Vector2(pos2.X, pos1.Y)));
+            float minX = MathF.Min(pos1.X, pos2.X);
+            float maxX = MathF.Max(pos1.X, pos2.X);
+            float minY = MathF.Min(pos1.Y, pos2.Y);
+            float maxY = MathF.Max(pos1.Y, pos2.Y);
 
+            // Corners
+            var corners = new Vector2[]
+            {
+                new Vector2(minX, minY),
+                new Vector2(minX, maxY),
+                new Vector2(maxX, minY),
+                new Vector2(maxX, maxY)
+            };
 
-            edges.Add(new Tuple<Vector2, Vector2>(new Vector2(pos2.X, pos2.Y), new Vector2(pos1.X, pos2.Y)));
-            edges.Add(new Tuple<Vector2, Vector2>(new Vector2(pos2.X, pos2.Y), new Vector2(pos2.X, pos1.Y)));
+            // Check that all corners are inside or on the border
+            foreach (var c in corners)
+            {
+                int pip = PointInPolygon(c, borderEdges, float.Epsilon);
+                if (pip < 0) // outside
+                {
+                    return false;
+                }
+            }
 
-            return false;
+            // Check that no border edge crosses the rectangle interior
+            foreach (var edge in borderEdges)
+            {
+                var a = edge.Item1;
+                var b = edge.Item2;
+
+                // vertical edge
+                if (MathF.Abs(a.X - b.X) < float.Epsilon)
+                {
+                    float ex = a.X;
+                    float eMinY = MathF.Min(a.Y, b.Y);
+                    float eMaxY = MathF.Max(a.Y, b.Y);
+
+                    // inside in x
+                    if (ex > minX + float.Epsilon && ex < maxX - float.Epsilon)
+                    {
+                        float overlapMinY = MathF.Max(eMinY, minY);
+                        float overlapMaxY = MathF.Min(eMaxY, maxY);
+
+                        // overlap length strictly positive -> edge crosses rectangle interior
+                        if (overlapMaxY - overlapMinY > float.Epsilon)
+                        {
+                            return false;
+                        }
+                    }
+                }
+                else // horizontal edge
+                {
+                    float ey = a.Y;
+                    float eMinX = MathF.Min(a.X, b.X);
+                    float eMaxX = MathF.Max(a.X, b.X);
+
+                    if (ey > minY + float.Epsilon && ey < maxY - float.Epsilon)
+                    {
+                        float overlapMinX = MathF.Max(eMinX, minX);
+                        float overlapMaxX = MathF.Min(eMaxX, maxX);
+                        if (overlapMaxX - overlapMinX > float.Epsilon)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        private static int PointInPolygon(Vector2 p, List<Tuple<Vector2, Vector2>> edges, float eps)
+        {
+            // check boundary first
+            foreach (var edge in edges)
+            {
+                var a = edge.Item1;
+                var b = edge.Item2;
+
+                if (MathF.Abs(a.X - b.X) < eps) // vertical
+                {
+                    if (MathF.Abs(p.X - a.X) < eps)
+                    {
+                        float ymin = MathF.Min(a.Y, b.Y) - eps;
+                        float ymax = MathF.Max(a.Y, b.Y) + eps;
+                        if (p.Y >= ymin && p.Y <= ymax) return 0;
+                    }
+                }
+                else // horizontal
+                {
+                    if (MathF.Abs(p.Y - a.Y) < eps)
+                    {
+                        float xmin = MathF.Min(a.X, b.X) - eps;
+                        float xmax = MathF.Max(a.X, b.X) + eps;
+                        if (p.X >= xmin && p.X <= xmax) return 0;
+                    }
+                }
+            }
+
+            // ray casting
+            int count = 0;
+            foreach (var edge in edges)
+            {
+                var a = edge.Item1;
+                var b = edge.Item2;
+
+                if (MathF.Abs(a.X - b.X) < eps) // vertical edge
+                {
+                    float ex = a.X;
+                    float ymin = MathF.Min(a.Y, b.Y);
+                    float ymax = MathF.Max(a.Y, b.Y);
+
+                    // include ymin, exclude ymax to avoid double count at vertices
+                    if (ex > p.X + eps && p.Y >= ymin && p.Y < ymax)
+                        count++;
+                }
+            }
+
+            return (count % 2 == 1) ? 1 : -1;
         }
 
         public static List<Tuple<Vector2, Vector2>> GetPerpendicularPoints()
@@ -130,7 +230,7 @@ namespace AOC
 
         public static void ReadInput()
         {
-            StreamReader sr = new StreamReader(@"../../../Day09/SampleInput.txt");
+            StreamReader sr = new StreamReader(@"../../../Day09/Input.txt");
             while (line != null)
             {
                 line = sr.ReadLine();

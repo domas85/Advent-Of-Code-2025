@@ -28,3 +28,9 @@ C:\My_Files\projects\Advent-Of-Code-2025\AdventOfCode2025\obj\Debug\net8.0\refin
 C:\My_Files\projects\Advent-Of-Code-2025\AdventOfCode2025\obj\Debug\net8.0\AdventOfCode2025.pdb
 C:\My_Files\projects\Advent-Of-Code-2025\AdventOfCode2025\obj\Debug\net8.0\AdventOfCode2025.genruntimeconfig.cache
 C:\My_Files\projects\Advent-Of-Code-2025\AdventOfCode2025\obj\Debug\net8.0\ref\AdventOfCode2025.dll
+C:\My_Files\projects\Advent-Of-Code-2025\AdventOfCode2025\bin\Debug\net8.0\libz3.dll
+C:\My_Files\projects\Advent-Of-Code-2025\AdventOfCode2025\bin\Debug\net8.0\Microsoft.Z3.dll
+C:\My_Files\projects\Advent-Of-Code-2025\AdventOfCode2025\bin\Debug\net8.0\runtimes\osx-x64\native\libz3.dylib
+C:\My_Files\projects\Advent-Of-Code-2025\AdventOfCode2025\bin\Debug\net8.0\runtimes\win-x64\native\libz3.dll
+C:\My_Files\projects\Advent-Of-Code-2025\AdventOfCode2025\obj\Debug\net8.0\AdventOfCode2025.csproj.AssemblyReference.cache
+C:\My_Files\projects\Advent-Of-Code-2025\AdventOfCode2025\obj\Debug\net8.0\AdventOf.3BA903F5.Up2Date
