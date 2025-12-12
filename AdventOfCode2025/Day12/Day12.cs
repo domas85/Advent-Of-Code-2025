@@ -49,36 +49,41 @@ namespace AOC
                 }
 
                 var shapesIndexCounts = TreeRegionIndexCounts[index];
-                if (CanCompactToRegion(region, shapesIndexCounts))
+
+                if (CanCompactToRegion(region, shapesIndexCounts) == true)
                 {
                     Result++;
                 }
+                index++;
             }
 
             Console.WriteLine("\n Result: " + Result);
         }
 
-        public static bool CanCompactToRegion(char[,] region, int[] ShapesIndexCounts)
+
+        public static bool HasSpaceForShapes(int regionArea, int[] shapesIndexCounts)
         {
-            // check if all shapes have been used
-            if (ShapesIndexCounts.All(count => count == 0))
+            int totalShapeArea = 0;
+            for (int i = 0; i < shapesIndexCounts.Length; i++)
             {
-                return true;
+                int shapeCount = shapesIndexCounts[i];
+                if (shapeCount > 0)
+                {
+                    int shapeArea = 0;
+                    for (int r = 0; r < SHAPE_SIZE; r++)
+                    {
+                        for (int c = 0; c < SHAPE_SIZE; c++)
+                        {
+                            if (Shapes[i][r, c] == '#')
+                            {
+                                shapeArea++;
+                            }
+                        }
+                    }
+                    totalShapeArea += shapeArea * shapeCount;
+                }
             }
-
-            int largestCount = ShapesIndexCounts.Max();
-            int maxIndex = ShapesIndexCounts.ToList().IndexOf(largestCount);
-
-            while (ShapesIndexCounts.Sum() > 0)
-            {
-                
-               
-                break;
-
-            }
-
-
-            return false;
+            return totalShapeArea < regionArea;
 
         }
 
@@ -97,6 +102,10 @@ namespace AOC
 
         public static bool CanPlaceShape(char[,] region, char[,] shape, int startRow, int startCol)
         {
+            if (startCol + SHAPE_SIZE >= region.GetLength(1) || startRow + SHAPE_SIZE >= region.GetLength(0))
+            {
+                return false;
+            }
             for (int i = 0; i < shape.GetLength(0); i++)
             {
                 for (int j = 0; j < shape.GetLength(1); j++)
@@ -123,7 +132,6 @@ namespace AOC
                 }
             }
         }
-
 
         public static char[,] RotateShape(char[,] shape)
         {
@@ -166,7 +174,7 @@ namespace AOC
 
         public static void ReadInput()
         {
-            StreamReader sr = new StreamReader(@"../../../Day12/Input.txt");
+            StreamReader sr = new StreamReader(@"../../../Day12/SampleInput.txt");
 
             int shapeIndex = -1;
             int rowIndex = 0;

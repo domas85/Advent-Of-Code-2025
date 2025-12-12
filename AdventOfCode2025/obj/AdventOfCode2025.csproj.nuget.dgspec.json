@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\AdventOfCode2025.csproj": {}
+    "C:\\My_Files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\AdventOfCode2025.csproj": {}
   },
   "projects": {
-    "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\AdventOfCode2025.csproj": {
+    "C:\\My_Files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\AdventOfCode2025.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\AdventOfCode2025.csproj",
+        "projectUniqueName": "C:\\My_Files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\AdventOfCode2025.csproj",
         "projectName": "AdventOfCode2025",
-        "projectPath": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\AdventOfCode2025.csproj",
-        "packagesPath": "C:\\Users\\DomasProkofjovas\\.nuget\\packages\\",
-        "outputPath": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\obj\\",
+        "projectPath": "C:\\My_Files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\AdventOfCode2025.csproj",
+        "packagesPath": "C:\\Users\\domas\\.nuget\\packages\\",
+        "outputPath": "C:\\My_Files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DomasProkofjovas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\domas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
