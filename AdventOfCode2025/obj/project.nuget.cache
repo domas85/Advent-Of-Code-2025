@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Iuv6tbFWKDU=",
+  "dgSpecHash": "T4OFCMpXgZs=",
   "success": true,
-  "projectFilePath": "C:\\My_Files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\AdventOfCode2025.csproj",
+  "projectFilePath": "C:\\files\\projects\\Advent-Of-Code-2025\\AdventOfCode2025\\AdventOfCode2025.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\domas\\.nuget\\packages\\microsoft.z3\\4.12.2\\microsoft.z3.4.12.2.nupkg.sha512"
+    "C:\\Users\\DomasProkofjovas\\.nuget\\packages\\microsoft.z3\\4.12.2\\microsoft.z3.4.12.2.nupkg.sha512"
   ],
   "logs": []
 }
